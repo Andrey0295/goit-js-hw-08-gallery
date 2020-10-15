@@ -28,8 +28,6 @@ function makeItemGallery(imageRefs) {
     .join('');
 }
 
-console.log(makeItemGallery);
-
 function onOpenLightBox(evt) {
   evt.preventDefault();
   if (evt.target.nodeName !== 'IMG') {
