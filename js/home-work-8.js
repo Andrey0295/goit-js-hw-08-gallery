@@ -21,9 +21,17 @@ function makeItemGallery(imageRefs) {
 
 getGalleryListEl.addEventListener('click', onImageClick);
 function onImageClick(evt) {
+  evt.preventDefault();
   if (evt.target.nodeName !== 'IMG') {
     return 'не попал!!!';
   }
-  getLightboxEl.classList.add('.is-open');
+  getLightboxEl.classList.add('is-open');
+  const getOriginalImgEl = document.querySelector('.lightbox__image');
+  getOriginalImgEl.setAttribute('src', evt.target.dataset.source);
+  getOriginalImgEl.setAttribute('alt', evt.target.alt);
   console.log(evt.target.dataset.source);
+  console.log('Клацнули в картинку');
+  console.log(evt.target.alt);
 }
+
+// console.log(getOriginalImgEl);
